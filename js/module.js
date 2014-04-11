@@ -7,7 +7,7 @@ module.directive("ratting", function() {
             if (attrs.ratting) {
                 var rattings = scope.$eval(attrs.ratting);
                 for (var i = 0; i < 5; i++) {
-                    if (i <= rattings) {
+                    if (i < rattings) {
                         element.append("<span class='glyphicon glyphicon-star'>");
                     } else {
                         element.append("<span class='glyphicon glyphicon-star-empty'>");

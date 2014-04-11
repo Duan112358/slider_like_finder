@@ -29,10 +29,10 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-3 col-xs-4 col-md-1 col-lg-1">
+            <div class="col-sm-3 col-xs-4 col-md-2 col-lg-2">
                 <img ng-src="{{user.photo}}" alt="" class="img-circle img-thumbnail">
             </div>
-            <div class="col-sm-9 col-xs-8 col-md-11 col-lg-11">
+            <div class="col-sm-9 col-xs-8 col-md-10 col-lg-10">
                 <div>
                     <h3 ng-bind="user.name" style="margin-top:10px"></h3>
                     <hr style="margin:10px 0">
@@ -76,7 +76,7 @@
             </div>
         </div>
         <div>
-        	<h3>Placeholder content</h3>
+            <h3>用户评论</h3>
         </div>
         <div class="modal-content">
             <div class="modal-header">
@@ -100,7 +100,17 @@
                 </div>
             </div>
         </div>
-        <script src="js/module.js"></script>
+    </div>
+    <div class="navbar-fixed-bottom">
+        <div class="add-comment">
+            <div class="col-xs-9 col-md-11 col-lg-11">
+                <input type="text" class="form-control" />
+            </div>
+            <button class="btn btn-primary">发表评论</button>
+        </div>
+    </div>
+
+    <script src="js/module.js"></script>
 </body>
 
 </html>
