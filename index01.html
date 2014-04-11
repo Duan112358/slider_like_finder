@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="miao">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller="MainCtrl">
+
+    <script src="lib/jquery-1.11.0.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-strap.min.js"></script>
+    <script src="lib/angular-strap.tpl.min.js"></script>
+    <script src="lib/holder.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 col-xs-4 col-md-1 col-lg-1">
+                <img ng-src="{{user.photo}}" alt="" class="img-circle img-thumbnail">
+            </div>
+            <div class="col-sm-9 col-xs-8 col-md-11 col-lg-11">
+                <div>
+                    <h3 ng-bind="user.name" style="margin-top:10px"></h3>
+                    <hr style="margin:10px 0">
+                    <div ng-bind="user.tel"></div>
+                    <div ng-bind="user.address"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="javascript:void(0);">
+                    <span>店铺介绍</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item" ng-repeat="page in introduces" ng-class="{active:$index==0}">
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3 text-center" ng-repeat="item in page">
+                                    <div>
+                                        <a href="jacascript:void(0);">
+                                            <img data-src="{{item.image}}" alt="carousel image" class="img-thumbnail">
+                                            <p ng-bind="item.price"></p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div>
+        	<h3>Placeholder content</h3>
+        </div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <a href="javascript:void(0);">
+                    <span>顾客点评</span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="list-group">
+                    <div class="list-group-item row" ng-repeat="c in comments">
+                        <div class="col-xs-3 col-md-1 col-lg-1">
+                            <img ng-src="{{c.photo}}" alt="" class="img-circle" />
+                        </div>
+                        <div class="col-xs-9 col-md-1 col-lg-11">
+                            <div class="comment">
+                                <p ng-bind="c.comment"></p>
+                                <p data-ratting="c.star"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/module.js"></script>
+</body>
+
+</html>
